@@ -1,0 +1,6 @@
+->gcc test.c -o testgdb -g
+
+->gdb testgdb
+	(gdb) set args 10 20
+	(gdb) show args
+	(gdb) q

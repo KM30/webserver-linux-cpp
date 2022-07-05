@@ -1,0 +1,31 @@
+#1#
+VMware->Linux->Ubuntu //服务端
+XSHELL & XFTP  //安全外壳协议(Secure Shell)//客户端
+Visual Studio Code //高效生产工具
+
+#2#
+远程连接：访问 & 编程
+1、Ubuntu(Response)
+	->sudo apt install openssh-server
+	    (Process: ssh-agent默认开启)
+
+	->(sudo apt autoremove)(sudo apt-get update)(sudo apt-get upgrade)(sudo apt install tree)
+	
+	->sudo apt install net-tools
+	->ifconfig
+	    (获得ubuntu的IP地址)
+
+2、XSHELL(Request-visit)
+	->新建，输入ubuntu的IP地址
+	->用户，ubuntu里的用户名对应
+	->密码，ubuntu的登陆密码
+
+3、VScode(Request-code)
+	->插件：Remote Development
+	->Remote Explorer - SSH Targets - config - IP&用户名 - connect to host
+
+	免密码连接登录
+	->Windows PowerShell: ssh-keygen  
+	->Ubuntu Terminal:  ->$ ssh-keygen -t rsa  ->$ cd .ssh/  ->$ ll  
+			->$ sudo apt install vim  ->$ vim authorized_keys
+			-> :wq

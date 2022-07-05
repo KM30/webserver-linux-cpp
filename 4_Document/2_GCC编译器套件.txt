@@ -1,0 +1,3 @@
+1、Ubuntu(Response)
+	->sudo apt install gcc g++
+	->gcc/g++ -v/--version

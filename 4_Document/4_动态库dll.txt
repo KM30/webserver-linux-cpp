@@ -1,0 +1,31 @@
+->cp calc library ../2_lib_os -r
+
+#1#
+制作动态库
+->gcc -c -fpic add.c div.c mult.c sub.c
+->gcc -shared add.o div.o mult.o sub.o -o libcalc.so
+
+使用动态库
+->gcc main.c -o main -I ./include/ -L ./lib/ -l calc
+
+	添加动态库文件的绝对路径，到动态载入器环境变量里<-
+	1、(仅限当前终端可用)
+	->ldd
+	->pwd
+	->export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/zy/Documents/3Linux_cpp/2_lib_os/library/lib
+	->env
+
+	2、(用户级别)
+	->vim .bashrc
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/zy/Documents/3Linux_cpp/2_lib_os/library/lib
+	->source .bashrc
+
+	3、(系统级别)
+	-> sudo vim /etc/profile
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/zy/Documents/3Linux_cpp/2_lib_os/library/lib
+	->source /etc/profile
+
+	4、(配置文件级别)
+	->sudo vim /etc/ld.so.conf
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/zy/Documents/3Linux_cpp/2_lib_os/library/lib
+	->sudo ldconfig

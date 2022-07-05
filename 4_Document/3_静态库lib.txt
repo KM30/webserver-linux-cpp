@@ -1,0 +1,11 @@
+创建静态库
+-> gcc -c xx.c xx.c
+-> ar rcs libxx.a xx.o xx.o
+-> rm *.o
+
+静态库位置信息
+->cp ../calc/libcalc.a ./lib/
+
+连接静态库和主函数生成可执行程序
+->gcc main.c -o app -I ./include/ -L ./lib/ -l calc
+->./app 
